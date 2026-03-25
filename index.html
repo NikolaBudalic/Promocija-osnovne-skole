@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OŠ Stevica Jovanović — Početna</title>
+    <meta name="description" content="Početna stranica Osnovne škole Stevica Jovanović — informacije, galerija i kontakt.">
+    <meta name="keywords" content="osnovna škola, Stevica Jovanović, obrazovanje, priredbe, roditelji">
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body id="stranaGlavna">
+
+    <header class="zaglavlje" role="banner">
+        <div class="zaglavlje__flex">
+            <a href="index.html" class="logoLink" aria-label="Početna - OŠ Stevica Jovanović">
+                <img src="slike/logo.png" alt="Logo škole Stevica Jovanović" class="logo" />
+                <span class="logoTekst">OŠ Stevica Jovanović</span>
+            </a>
+
+            <button id="dugmeHamburger" class="hamburger" aria-expanded="false" aria-controls="meniGlavni" aria-label="Otvorite meni">
+                <span class="hamburger__traka"></span>
+                <span class="hamburger__traka"></span>
+                <span class="hamburger__traka"></span>
+            </button>
+
+            <nav id="meniGlavni" class="meni" role="navigation" aria-label="Glavni meni">
+                <ul class="meni__lista">
+                    <li><a href="index.html" class="meni__link aktivna">Početna</a></li>
+                    <li><a href="onama.html" class="meni__link">O nama</a></li>
+                    <li><a href="usluga.html" class="meni__link">Usluga</a></li>
+                    <li><a href="kontakt.html" class="meni__link">Kontakt</a></li>
+                </ul>
+            </nav>
+
+            <div class="kontrolePristupacnost">
+                <button id="dugmeTamniRezim" class="kontrola" aria-pressed="false" title="Tamni režim">🌗</button>
+                <button id="dugmeKontrast" class="kontrola" aria-pressed="false" title="Visoki kontrast">A☼</button>
+                <button id="dugmePovecajTekst" class="kontrola" title="Povećaj tekst">A+</button>
+                <button id="dugmeSmanjiTekst" class="kontrola" title="Smanji tekst">A−</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="sadrzaj" role="main">
+        <!-- HERO / SLIDER -->
+        <section id="slajder" class="slajder" aria-roledescription="carousel" aria-label="Slajder fotografija škole">
+            <div class="slajder__kontejner">
+                <article class="slajder__stavka aktivna" data-indeks="0" aria-hidden="false">
+                    <img src="slike/skola1.jpg" alt="Spoljašnji izgled škole" class="slajder__slika" />
+                    <div class="slajder__tekst" role="heading" aria-level="1">Dobrodošli u OŠ Stevica Jovanović</div>
+                </article>
+                <article class="slajder__stavka" data-indeks="1" aria-hidden="true">
+                    <img src="slike/skola2.jpg" alt="Učionica sa decom" class="slajder__slika" />
+                    <div class="slajder__tekst">Učenje kroz igru i saradnju</div>
+                </article>
+                <article class="slajder__stavka" data-indeks="2" aria-hidden="true">
+                    <img src="slike/skola3.jpg" alt="Učenici na priredbi" class="slajder__slika" />
+                    <div class="slajder__tekst">Priredbe i događaji tokom cele godine</div>
+                </article>
+            </div>
+
+            <button id="slajderPrethodni" class="slajder__kontrol" aria-label="Prethodni slajd">❮</button>
+            <button id="slajderSledeci" class="slajder__kontrol" aria-label="Sledeći slajd">❯</button>
+
+            <div class="slajder__indikatori" role="tablist" aria-label="Izaberite slajd">
+                <button class="indikator aktivan" data-indeks="0" aria-selected="true" role="tab" aria-controls="slajder">1</button>
+                <button class="indikator" data-indeks="1" aria-selected="false" role="tab" aria-controls="slajder">2</button>
+                <button class="indikator" data-indeks="2" aria-selected="false" role="tab" aria-controls="slajder">3</button>
+            </div>
+        </section>
+
+        <!-- Kratak tekst -->
+        <section class="uvod section-anim" id="oSkoli">
+            <h2>O nama</h2>
+            <p>
+                OŠ Stevica Jovanović neguje prijateljsko i bezbedno okruženje. Naši nastavnici rade na razvoju
+                znanja i veština kroz kreativne i praktične aktivnosti. Posvećeni smo svakom detetu.
+            </p>
+        </section>
+
+        <!-- Kartice usluga -->
+        <section class="usluge-section section-anim" id="pregledUsluga">
+            <h2>Usluge škole</h2>
+            <div class="kartice">
+                <article class="kartica">
+                    <h3>Obrazovanje</h3>
+                    <p>Kvalitetni časovi iz svih predmeta uz individualan pristup.</p>
+                </article>
+                <article class="kartica">
+                    <h3>Ekstraaktivnosti</h3>
+                    <p>Sportske sekcije, muzičke radionice i dramska sekcija.</p>
+                </article>
+                <article class="kartica">
+                    <h3>Podrška roditeljima</h3>
+                    <p>Redovne konsultacije i saradnja sa roditeljima.</p>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="podnozje" role="contentinfo">
+        <p>&copy; 2025 OŠ Stevica Jovanović — sve informacije za roditelje i učenike</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

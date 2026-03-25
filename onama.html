@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>O nama — OŠ Stevica Jovanović</title>
+    <meta name="description" content="Informacije o istoriji i vrednostima OŠ Stevica Jovanović.">
+    <meta name="keywords" content="o školi, istorijat, nastavnici, vrednosti">
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body id="stranaONama">
+
+    <header class="zaglavlje" role="banner">
+        <div class="zaglavlje__flex">
+            <a href="index.html" class="logoLink" aria-label="Početna - OŠ Stevica Jovanović">
+                <img src="slike/logo.png" alt="Logo škole Stevica Jovanović" class="logo" />
+                <span class="logoTekst">OŠ Stevica Jovanović</span>
+            </a>
+
+            <button id="dugmeHamburgerONama" class="hamburger" aria-expanded="false" aria-controls="meniGlavniONama" aria-label="Otvorite meni">
+                <span class="hamburger__traka"></span>
+                <span class="hamburger__traka"></span>
+                <span class="hamburger__traka"></span>
+            </button>
+
+            <nav id="meniGlavniONama" class="meni" role="navigation" aria-label="Glavni meni">
+                <ul class="meni__lista">
+                    <li><a href="index.html" class="meni__link">Početna</a></li>
+                    <li><a href="onama.html" class="meni__link aktivna">O nama</a></li>
+                    <li><a href="usluga.html" class="meni__link">Usluga</a></li>
+                    <li><a href="kontakt.html" class="meni__link">Kontakt</a></li>
+                </ul>
+            </nav>
+
+            <div class="kontrolePristupacnost">
+                <button id="dugmeTamniRezimONama" class="kontrola" aria-pressed="false">🌗</button>
+                <button id="dugmeKontrastONama" class="kontrola" aria-pressed="false">A☼</button>
+                <button id="dugmePovecajTekstONama" class="kontrola">A+</button>
+                <button id="dugmeSmanjiTekstONama" class="kontrola">A−</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="sadrzaj section-anim" role="main">
+
+        <section class="istorijat">
+            <h2>Istorijat škole</h2>
+            <p>Osnovna škola „Stevica Jovanović” osnovana je s ciljem da pruži kvalitetno obrazovanje u skladu sa savremenim obrazovnim standardima. Tokom godina, škola je postala prepoznatljiva po rezultatima učenika, saradnji sa lokalnom zajednicom i brojnim vannastavnim aktivnostima.</p>
+        </section>
+
+        <section class="vrednosti">
+            <h2>Naše vrednosti</h2>
+            <ul>
+                <li>Obrazovanje zasnovano na znanju, poštovanju i saradnji.</li>
+                <li>Podsticanje kreativnosti i samostalnog razmišljanja.</li>
+                <li>Razvijanje empatije i društvene odgovornosti.</li>
+                <li>Otvorenost prema novim idejama i tehnologijama.</li>
+            </ul>
+        </section>
+        <section class="osoblje">
+            <h2>Naši profesori i osoblje</h2>
+            <div class="osoblje__grid">
+                <div class="osoba">
+                    <img src="slike/direktorka.jpg" alt="Direktorka Jasna Građanski" class="osoba__slika">
+                    <h3>Jasna Građanski</h3>
+                    <p>Direktorka škole</p>
+                </div>
+                <div class="osoba">
+                    <img src="slike/sekretar.jpg" alt="Vladimir Zlokoloca" class="osoba__slika">
+                    <h3>Vladimir Zlokoloca</h3>
+                    <p>Školski sekretar</p>
+                </div>
+                <div class="osoba">
+                    <img src="slike/profesor1.jpg" alt="Prof. Zorana Mitrović" class="osoba__slika">
+                    <h3>Prof. Zorana Mitrović</h3>
+                    <p>Srpski jezik i književnost</p>
+                </div>
+                <div class="osoba">
+                    <img src="slike/profesor2.jpg" alt="Prof. Marko Ilić" class="osoba__slika">
+                    <h3>Prof. Marko Ilić</h3>
+                    <p>Matematika</p>
+                </div>
+                <div class="osoba">
+                    <img src="slike/profesor3.jpg" alt="Prof. Jelena Jovčić" class="osoba__slika">
+                    <h3>Prof. Jelena Jovčić</h3>
+                    <p>Geografija</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="galerija">
+            <h2>Galerija</h2>
+            <div class="galerija__grid">
+                <img src="slike/skola1.jpg" alt="Školska zgrada" />
+                <img src="slike/skola2.jpg" alt="Učenici u učionici" />
+                <img src="slike/skola3.jpg" alt="Školska priredba" />
+                <img src="slike/skola4.jpg" alt="Školski hol" />
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="podnozje" role="contentinfo">
+        <p>&copy; 2025 OŠ Stevica Jovanović</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

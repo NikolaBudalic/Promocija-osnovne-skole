@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kontakt — OŠ Stevica Jovanović</title>
+    <meta name="description" content="Kontakt podaci i forma za OŠ Stevica Jovanović.">
+    <meta name="keywords" content="kontakt, škola, roditelji, telefon, email">
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body id="stranaKontakt">
+
+    <header class="zaglavlje" role="banner">
+        <div class="zaglavlje__flex">
+            <a href="index.html" class="logoLink" aria-label="Početna - OŠ Stevica Jovanović">
+                <img src="slike/logo.png" alt="Logo škole Stevica Jovanović" class="logo" />
+                <span class="logoTekst">OŠ Stevica Jovanović</span>
+            </a>
+
+            <button id="dugmeHamburgerKontakt" class="hamburger" aria-expanded="false" aria-controls="meniGlavniKontakt" aria-label="Otvorite meni">
+                <span class="hamburger__traka"></span>
+                <span class="hamburger__traka"></span>
+                <span class="hamburger__traka"></span>
+            </button>
+
+            <nav id="meniGlavniKontakt" class="meni" role="navigation" aria-label="Glavni meni">
+                <ul class="meni__lista">
+                    <li><a href="index.html" class="meni__link">Početna</a></li>
+                    <li><a href="onama.html" class="meni__link">O nama</a></li>
+                    <li><a href="usluga.html" class="meni__link">Usluga</a></li>
+                    <li><a href="kontakt.html" class="meni__link aktivna">Kontakt</a></li>
+                </ul>
+            </nav>
+
+            <div class="kontrolePristupacnost">
+                <button id="dugmeTamniRezimKontakt" class="kontrola" aria-pressed="false">🌗</button>
+                <button id="dugmeKontrastKontakt" class="kontrola" aria-pressed="false">A☼</button>
+                <button id="dugmePovecajTekstKontakt" class="kontrola">A+</button>
+                <button id="dugmeSmanjiTekstKontakt" class="kontrola">A−</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="sadrzaj section-anim" role="main">
+        <h1>Kontakt</h1>
+
+        <section class="kontakt-kartica">
+            <form id="kontaktForma" class="kontakt-forma" aria-label="Kontakt forma">
+                <label for="imeIPrezime">Ime i prezime</label>
+                <input id="imeIPrezime" name="imeIPrezime" type="text" required />
+
+                <label for="emailKontakt">Email</label>
+                <input id="emailKontakt" name="emailKontakt" type="email" required />
+
+                <label for="porukaKontakt">Poruka</label>
+                <textarea id="porukaKontakt" name="porukaKontakt" rows="5" required></textarea>
+
+                <button type="submit" class="posaljiDugme">Pošalji</button>
+            </form>
+            <p id="porukaGreske" style="color:red;"></p>
+
+            <div class="kontakt-info">
+                <h2>Adresa i podaci</h2>
+                <p>Braće Jovanovića 75, Pančevo</p>
+                <p>Telefon: 013/319-166</p>
+                <p>Email: osstevica@mts.rs</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="podnozje" role="contentinfo">
+        <p>&copy; 2025 OŠ Stevica Jovanović</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

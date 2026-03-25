@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Usluga — OŠ Stevica Jovanović</title>
+    <meta name="description" content="Usluge koje nudi OŠ Stevica Jovanović: obrazovanje, vannastavne aktivnosti, podrška.">
+    <meta name="keywords" content="usluge škole, vannastavne aktivnosti, podrška">
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body id="stranaUsluga">
+
+    <header class="zaglavlje" role="banner">
+        <div class="zaglavlje__flex">
+            <a href="index.html" class="logoLink" aria-label="Početna - OŠ Stevica Jovanović">
+                <img src="slike/logo.png" alt="Logo škole Stevica Jovanović" class="logo" />
+                <span class="logoTekst">OŠ Stevica Jovanović</span>
+            </a>
+
+            <button id="dugmeHamburgerUsluga" class="hamburger" aria-expanded="false" aria-controls="meniGlavniUsluga" aria-label="Otvorite meni">
+                <span class="hamburger__traka"></span>
+                <span class="hamburger__traka"></span>
+                <span class="hamburger__traka"></span>
+            </button>
+
+            <nav id="meniGlavniUsluga" class="meni" role="navigation" aria-label="Glavni meni">
+                <ul class="meni__lista">
+                    <li><a href="index.html" class="meni__link">Početna</a></li>
+                    <li><a href="onama.html" class="meni__link">O nama</a></li>
+                    <li><a href="usluga.html" class="meni__link aktivna">Usluga</a></li>
+                    <li><a href="kontakt.html" class="meni__link">Kontakt</a></li>
+                </ul>
+            </nav>
+
+            <div class="kontrolePristupacnost">
+                <button id="dugmeTamniRezimUsluga" class="kontrola" aria-pressed="false">🌗</button>
+                <button id="dugmeKontrastUsluga" class="kontrola" aria-pressed="false">A☼</button>
+                <button id="dugmePovecajTekstUsluga" class="kontrola">A+</button>
+                <button id="dugmeSmanjiTekstUsluga" class="kontrola">A−</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="sadrzaj section-anim" role="main">
+        <section class="uvod">
+            <h1>Naše usluge</h1>
+            <p>OŠ Stevica Jovanović nudi bogat izbor obrazovnih i vannastavnih programa koji omogućavaju deci da rastu, istražuju i razvijaju svoje potencijale u bezbednom i podsticajnom okruženju.</p>
+        </section>
+
+        <section class="kartice">
+            <article class="kartica">
+                <h3>📚 Redovna nastava</h3>
+                <p>Izvodimo nastavu po savremenim planovima i programima, uz korišćenje digitalnih udžbenika i interaktivnih materijala. Posebna pažnja posvećena je individualnom pristupu svakom učeniku.</p>
+            </article>
+
+            <article class="kartica">
+                <h3>🎭 Vannastavne aktivnosti</h3>
+                <p>Učenici mogu da se uključe u različite sekcije — dramsku, likovnu, informatičku, sportsku, muzičku i mnoge druge. Naš cilj je da deca pronađu ono što vole i razviju svoj talenat.</p>
+            </article>
+
+            <article class="kartica">
+                <h3>🤝 Mentorstvo i podrška</h3>
+                <p>Stručni saradnici škole (psiholog, pedagog, logoped) pružaju pomoć učenicima i roditeljima u savladavanju poteškoća, razvoju samopouzdanja i planiranju daljeg školovanja.</p>
+            </article>
+        </section>
+
+        <section class="posebneUsluge">
+            <h2>Posebni programi i projekti</h2>
+            <div class="kartice">
+                <article class="kartica">
+                    <h3>🌍 Učenje kroz projekte</h3>
+                    <p>Učenici učestvuju u međunarodnim projektima eTwinning i Erasmus+ koji povezuju škole širom Evrope. Uče o različitim kulturama i jezicima kroz timski rad.</p>
+                </article>
+
+                <article class="kartica">
+                    <h3>💻 Digitalna pismenost</h3>
+                    <p>Škola podstiče razvoj informatičkih veština kroz nastavu programiranja, robotike i korišćenje računara od najranijih razreda.</p>
+                </article>
+
+                <article class="kartica">
+                    <h3>🌱 Ekološke inicijative</h3>
+                    <p>Organizujemo akcije pošumljavanja, reciklaže i edukativne radionice o zaštiti prirode. Naša škola ponosno nosi titulu „Eko-škole“.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="zajednica">
+            <h2>Saradnja sa zajednicom</h2>
+            <p>Učestvujemo u brojnim humanitarnim, kulturnim i sportskim događajima u saradnji sa lokalnom zajednicom i drugim obrazovnim institucijama. Cilj nam je da deca uče o solidarnosti i odgovornosti prema društvu.</p>
+        </section>
+    </main>
+
+    <footer class="podnozje" role="contentinfo">
+        <p>&copy; 2025 OŠ Stevica Jovanović</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

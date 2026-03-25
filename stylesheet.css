@@ -1,0 +1,612 @@
+﻿/* stylesheet.css*/
+
+/* Reset i osnovno */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: var(--velicina-osnovna);
+}
+
+:root {
+    --main-bg: #ffffff;
+    --main-text: #222;
+    --card-bg: #f9f9f9;
+    --card-text: #222;
+    --input-bg: #fff;
+    --input-text: #222;
+    --input-border: #ccc;
+    --btn-bg: #007BFF;
+    --btn-text: #fff;
+    --velicina-osnovna: clamp(16px, 1.6vw, 18px);
+    --tranzicija: ease-in-out;
+}
+
+body.tamni-rezim {
+    --main-bg: #1e1e1e;
+    --main-text: #e0e0e0;
+    --card-bg: #2a2a2a;
+    --card-text: #e0e0e0;
+    --input-bg: #333;
+    --input-text: #f0f0f0;
+    --input-border: #555;
+    --btn-bg: #0d6efd;
+    --btn-text: #fff;
+}
+
+body.visoki-kontrast {
+    --main-bg: #171717; /* pozadina stranice */
+    --main-text: #fff; /* glavni tekst */
+    --card-bg: #111; /* kartice/oblaci */
+    --card-text: #fff; /* tekst unutar kartica */
+    --input-bg: #000;
+    --input-text: #fff;
+    --input-border: #fff;
+    --btn-bg: #fff;
+    --btn-text: #000;
+}
+body {
+    font-size: var(--velicina-osnovna);
+    background-color: var(--main-bg);
+    color: var(--main-text);
+    font-family: "Segoe UI", sans-serif;
+    line-height: 1.6;
+}
+
+
+
+/* Header / meni */
+.zaglavlje {
+    background: linear-gradient(90deg, rgba(158,201,217,0.9), rgba(255,220,163,0.9));
+    padding: 12px 18px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 6px 18px rgba(34,50,58,0.06);
+}
+
+.zaglavlje__flex {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: space-between;
+}
+
+.logoLink {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo {
+    width: 44px;
+    height: 44px;
+    display: block;
+}
+
+.logoTekst {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* Meni */
+.meni {
+    display: block;
+}
+
+.meni__lista {
+    display: flex;
+    gap: 14px;
+    list-style: none;
+    align-items: center;
+}
+
+.meni__link {
+    padding: 8px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: background var(--tranzicija);
+}
+
+    .meni__link:hover {
+        background: rgba(0,0,0,0.05);
+    }
+
+    .meni__link.aktivna {
+        box-shadow: inset 0 -3px 0 rgba(77,159,224,0.9);
+    }
+
+/* Hamburger (na manjim rezolucijama) */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.hamburger__traka {
+    width: 26px;
+    height: 2px;
+    background: var(--main-text);
+    display: block;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: transform .25s;
+}
+
+/* Kontrole pristupačnosti */
+.kontrolePristupacnost {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.kontrola {
+    background: transparent;
+    border: 1px solid rgba(34,50,58,0.08);
+    padding: 6px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Slajder */
+.slajder {
+    position: relative;
+    overflow: hidden;
+    max-height: 460px;
+    border-radius: 12px;
+    margin: 18px auto;
+    width: 95%;
+}
+
+.slajder__kontejner {
+    position:relative;
+}
+
+.slajder__stavka {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: scale(0.98);
+    transition: opacity .8s var(--tranzicija), transform .8s var(--tranzicija);
+}
+
+    .slajder__stavka.aktivna {
+        opacity: 1;
+        transform: scale(1);
+        position: relative;
+    }
+
+.slajder__slika {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    filter: saturate(1.02);
+    transition: filter 0.6s;
+}
+
+.slajder__tekst {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    background: rgba(255,255,255,0.85);
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgba(34,50,58,0.06);
+}
+
+/* Kontrole slajdera */
+.slajder__kontrol {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.8);
+    border: none;
+    font-size: 24px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#slajderPrethodni {
+    left: 10px;
+}
+
+#slajderSledeci {
+    right: 10px;
+}
+
+.slajder__indikatori {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    display: flex;
+    gap: 6px;
+}
+
+.indikator {
+    width: 36px;
+    height: 28px;
+    border-radius: 6px;
+    border: none;
+    background: rgba(255,255,255,0.8);
+    cursor: pointer;
+    transition: transform .25s;
+}
+
+    .indikator.aktivan {
+        box-shadow: 0 6px 16px rgba(34,50,58,0.12);
+        transform: scale(1.05);
+    }
+
+/* Sekcije i kartice */
+.sadrzaj {
+    padding: 22px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-anim {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+    .section-anim.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+.uvod p {
+    margin-top: 12px;
+}
+
+.kartice {
+    display: flex;
+    gap: 14px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.kartica {
+    flex: 1 1 280px;
+    background: var(--boja-kartica);
+    padding: 16px;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 18px rgba(34,50,58,0.04);
+    transition: transform var(--tranzicija), box-shadow var(--tranzicija);
+}
+
+    .kartica:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 30px rgba(34,50,58,0.06);
+    }
+/* Tamni režim */
+body.tamni main.sadrzaj {
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+}
+
+/* Visoki kontrast */
+body.kontrast main.sadrzaj,
+body.kontrast .kontakt-kartica,
+body.kontrast .nastavnici,
+body.kontrast .usluge-kartice {
+    background-color: #1a1a1a; /* blago svetlija od crne */
+    border: 2px solid #fff; /* da se jasno odvaja od pozadine */
+}
+
+
+/* Sekcije o nama */
+main.sadrzaj {
+    background-color: var(--boja-kartica, rgba(255, 255, 255, 0.03));
+    border-radius: 12px;
+    padding: 24px;
+    margin: 24px auto;
+    width: 95%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+
+main h1 {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+}
+
+main section {
+    margin-bottom: 50px;
+}
+
+.istorijat, .vrednosti, .galerija {
+    background-color: var(--card-bg, #f9f9f9);
+    color: var(--card-text, #222);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background var(--tranzicija), color var(--tranzicija), transform 0.2s ease;
+}
+
+    .istorijat:hover, .vrednosti:hover, .galerija:hover {
+        transform: translateY(-4px);
+    }
+
+    .vrednosti ul {
+        list-style-type: "★ ";
+        padding-left: 20px;
+    }
+
+.galerija__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+    .galerija__grid img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 1px 6px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease;
+    }
+
+        .galerija__grid img:hover {
+            transform: scale(1.05);
+        }
+/* Sekcija osoblje */
+.osoblje {
+    background-color: var(--card-bg, #fdfdfd);
+    color: var(--card-text, #222);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 60px;
+    text-align: center;
+}
+.osoblje__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    justify-items: center;
+}
+
+
+.osoba {
+    background-color: var(--card-bg, #ffffff);
+    color: var(--card-text, #222);
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 220px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background var(--tranzicija), color var(--tranzicija);
+}
+
+    .osoba:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+.osoba__slika {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.osoba h3 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.osoba p {
+    color: var(--card-text, #555);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Kontakt */
+
+/* Glavni sadržaj */
+main.sadrzaj {
+    background-color: var(--main-bg, #ffffff);
+    color: var(--main-text, #222);
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    max-width: 1100px;
+    margin: 30px auto 40px auto;
+    padding: 40px 25px;
+    line-height: 1.7;
+    transition: background var(--tranzicija), color var(--tranzicija);
+}
+
+
+/* Kontakt kartica */
+.kontakt-kartica {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.kontakt-forma {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.kontakt-forma label {
+    font-weight: 600;
+}
+
+.kontakt-forma input,
+.kontakt-forma textarea {
+    background-color: var(--input-bg, #fff);
+    color: var(--input-text, #222);
+    border: 1px solid var(--input-border, #ccc);
+    border-radius: 8px;
+    padding: 10px;
+    transition: background var(--tranzicija), color var(--tranzicija), border var(--tranzicija);
+}
+
+
+.posaljiDugme {
+    background-color: var(--btn-bg, #2a72c6);
+    color: var(--btn-text, #fff);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+    /* Efekat prelaska mišem */
+    .posaljiDugme:hover {
+        background-color: #1f5ea5;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Efekat klika */
+    .posaljiDugme:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Fokus tastaturom */
+    .posaljiDugme:focus {
+        outline: 3px solid #ffcc00;
+        outline-offset: 3px;
+    }
+
+/* Kontakt info */
+.kontakt-info {
+    background-color: var(--card-bg, #f9f9f9);
+    color: var(--card-text, #222);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+    transition: background var(--tranzicija), color var(--tranzicija);
+}
+
+
+    .kontakt-info h2 {
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+    }
+
+/* Responsivnost */
+@media (max-width: 800px) {
+    .kontakt-kartica {
+        flex-direction: column;
+    }
+}
+
+
+
+/* Footer */
+.podnozje {
+    text-align: center;
+    padding: 14px;
+    margin-top: 22px;
+    color: #41545a;
+}
+
+/* Vizualni efekti: glow i fade */
+.kartica h3 {
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+
+.slajder__slika:hover {
+    filter: brightness(1.04) saturate(1.05);
+    transition: filter .4s;
+}
+
+/* Pristupačnost: visoki kontrast */
+body.visoki-kontrast {
+    background: #000;
+    color: #fff;
+}
+
+    body.visoki-kontrast .zaglavlje {
+        background: #111;
+    }
+
+    body.visoki-kontrast .logoTekst {
+        color: #fff;
+    }
+
+    body.visoki-kontrast .posaljiDugme {
+        background: #fff;
+        color: #000;
+    }
+
+/* Tamni režim */
+body.tamni-rezim {
+    background: #0f1720;
+    color: #e6f0f4;
+}
+
+    body.tamni-rezim .zaglavlje {
+        background: linear-gradient(90deg,#134155,#5a7f95);
+    }
+
+/* Responsive: dva nivoa (desktop/tablet i mobilni) */
+/* Tablet i manje uređaje - breakpoint 900px: meni prelazi u hamburger */
+@media (max-width:900px) {
+    .meni {
+        display: none;
+    }
+
+    .hamburger {
+        display: inline-flex;
+    }
+
+    .zaglavlje__flex {
+        gap: 8px;
+    }
+
+    .slajder__slika {
+        height: 320px;
+    }
+}
+
+/* Mobilne male rezolucije (više prilagođavanja) */
+@media (max-width:480px) {
+    :root {
+        --naslov-font-size: clamp(20px, 5.2vw, 26px);
+    }
+
+    .logoTekst {
+        display: none;
+    }
+    /* sačuvaj prostor */
+    .slajder__slika {
+        height: 220px;
+    }
+
+    .kontrolePristupacnost {
+        display: none;
+        transition: background 0.3s;
+    }
+    /* može biti u meniju na malom ekranu */
+    .kartice {
+        flex-direction: column;
+    }
+
+    .kontakt-kartica {
+        flex-direction: column;
+    }
+}
